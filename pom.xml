@@ -6,27 +6,34 @@
         <version>0.1</version>
 	<name>storm-cli</name>
 	<description>CLI for Apache Storm</description>
+        <properties>
+         <storm.version>0.9.3</storm.version>
+         <antlrworks.version>1.5.1</antlrworks.version>
+         <commons-cli.verson>1.2</commons-cli.verson>
+         <jline.version>0.9.94</jline.version>
+         <antlr-runtime.version>3.4</antlr-runtime.version>
+        </properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlrworks</artifactId>
-			<version>1.5.1</version>
+			<version>${antlrworks.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.storm</groupId>
 			<artifactId>storm-core</artifactId>
-			<version>0.9.3</version>
+			<version>${storm.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>jline</groupId>
 			<artifactId>jline</artifactId>
-			<version>0.9.94</version>
+			<version>${jline.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr-runtime</artifactId>
-			<version>3.4</version>
+			<version>${antlr-runtime.version}</version>
 		</dependency>
 
 	</dependencies>
