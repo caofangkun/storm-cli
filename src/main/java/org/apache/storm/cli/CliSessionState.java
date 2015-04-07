@@ -41,7 +41,7 @@ public class CliSessionState extends SessionState {
   private TTransport transport;
   private NimbusClient client;
 
-  public CliSessionState(Config conf) {
+  public CliSessionState(StormConf conf) {
     super(conf);
     remoteMode = false;
   }

@@ -17,18 +17,18 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.storm.cli.StormConf;
 import org.apache.storm.ql.exec.Utils;
+import org.apache.storm.ql.utils.ParseUtils;
 
 import backtype.storm.Config;
-
-import com.tencent.jstorm.utils.ServerUtils;
 
 public class SessionState {
 	private static final Log LOG = LogFactory.getLog(SessionState.class);
 
 	protected ClassLoader parentLoader;
 
-	protected Config conf;
+	protected StormConf conf;
 
 	/**
 	 * silent mode.
@@ -87,11 +87,11 @@ public class SessionState {
 
 	private final String userName;
 
-	public Config getConf() {
+	public StormConf getConf() {
 		return conf;
 	}
 
-	public void setConf(Config conf) {
+	public void setConf(StormConf conf) {
 		this.conf = conf;
 	}
 
@@ -127,11 +127,11 @@ public class SessionState {
 		this.isVerbose = isVerbose;
 	}
 
-	public SessionState(Config conf) {
+	public SessionState(StormConf conf) {
 		this(conf, null);
 	}
 
-	public SessionState(Config conf, String userName) {
+	public SessionState(StormConf conf, String userName) {
 		this.conf = conf;
 		this.userName = userName;
 		isSilent = false;
@@ -188,7 +188,7 @@ public class SessionState {
 	/**
 	 * start a new session and set it to current session.
 	 */
-	public static SessionState start(Config conf) {
+	public static SessionState start(StormConf conf) {
 		SessionState ss = new SessionState(conf);
 		return start(ss);
 	}
@@ -397,12 +397,8 @@ public class SessionState {
 			console.printInfo("Added " + newJar + " to class path");
 			return true;
 		} catch (Exception e) {
-			console.printError(
-					"Unable to register " + newJar + "\nException: "
-							+ e.getMessage(),
-					"\n"
-							+ com.tencent.jstorm.utils.StringUtils
-									.stringifyException(e));
+			console.printError("Unable to register " + newJar + "\nException: "
+					+ e.getMessage(), "\n" + ParseUtils.stringifyError(e));
 			return false;
 		}
 	}
@@ -682,7 +678,7 @@ public class SessionState {
 
 	public void close() throws IOException {
 		// JavaUtils.closeClassLoadersTo(conf.getClassLoader(), parentLoader);
-		String tmpDir = backtype.storm.utils.Utils.parseString(
+		String tmpDir = ParseUtils.parseString(
 				getConf().get(Config.STORM_LOCAL_DIR), "/tmp");
 		File resourceDir = new File(tmpDir);
 		LOG.debug("Removing resource dir " + resourceDir);

@@ -14,7 +14,8 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 
-import backtype.storm.DynamicClassLoader;
+import clojure.lang.DynamicClassLoader;
+
 
 public class Utils {
 
@@ -42,7 +43,7 @@ public class Utils {
     // DynamicClassLoader.updateLoader(curPath.toArray(new URL[0]));
 
     DynamicClassLoader dcl =
-        new DynamicClassLoader(curPath.toArray(new URL[0]), loader);
+        new DynamicClassLoader(loader);
     return dcl;
   }
 

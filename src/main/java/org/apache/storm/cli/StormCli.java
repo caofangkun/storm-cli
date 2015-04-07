@@ -65,7 +65,7 @@ public class StormCli {
     if (!oproc.process_stage1(args)) {
       return 1;
     }
-    CliSessionState ss = new CliSessionState(new Config(SessionState.class));
+    CliSessionState ss = new CliSessionState(new StormConf(SessionState.class));
     ss.in = System.in;
 
     try {
