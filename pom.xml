@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+        <groupId>org.apache.storm</groupId>
+	<artifactId>storm-cli</artifactId>
+        <version>0.1</version>
+	<name>storm-cli</name>
+	<description>CLI for Apache Storm</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlrworks</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.storm</groupId>
+			<artifactId>storm-core</artifactId>
+			<version>0.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>jline</groupId>
+			<artifactId>jline</artifactId>
+			<version>0.9.94</version>
+		</dependency>
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr-runtime</artifactId>
+			<version>3.4</version>
+		</dependency>
+
+	</dependencies>
+</project>
