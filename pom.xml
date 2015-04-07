@@ -9,7 +9,7 @@
         <properties>
          <storm.version>0.9.3</storm.version>
          <antlrworks.version>1.5.1</antlrworks.version>
-         <commons-cli.verson>1.2</commons-cli.verson>
+         <commons-cli.verson>1.2</commons-cli.version>
          <jline.version>0.9.94</jline.version>
          <antlr-runtime.version>3.4</antlr-runtime.version>
         </properties>
