@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.storm.cli.StormConf;
 import org.apache.storm.ql.session.SessionState;
 import org.apache.thrift.transport.TTransport;
 
