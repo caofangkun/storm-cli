@@ -378,7 +378,7 @@ public class SessionState {
 		LogHelper console = getConsole();
 		Config conf = (ss == null) ? new Config() : ss.getConf();
 		// TODO
-		if (ServerUtils.existsFile(newFile)) {
+		if (Utils.existsFile(newFile)) {
 			return new File(newFile).getAbsolutePath();
 		} else {
 			console.printError(newFile + " does not exist");

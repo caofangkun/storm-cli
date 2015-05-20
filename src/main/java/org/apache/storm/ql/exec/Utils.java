@@ -87,4 +87,9 @@ public class Utils {
       }
     }
   }
+
+public static boolean existsFile(String newFile) {
+	// TODO Auto-generated method stub
+	return false;
+}
 }

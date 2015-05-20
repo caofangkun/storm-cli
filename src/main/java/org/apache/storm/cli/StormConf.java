@@ -4,7 +4,9 @@ import java.net.URL;
 import java.util.Map;
 import java.util.Properties;
 
-public class StormConf {
+import backtype.storm.Config;
+
+public class StormConf extends Config {
 
   private static URL stormDefaultURL = null;
   private static URL stormSiteURL = null;
@@ -23,7 +25,6 @@ public class StormConf {
   public StormConf(Class<?> cls) {
     initialize(cls);
   }
-
   private void initialize(Class<?> cls) {
     // TODO Auto-generated method stub
 
@@ -37,5 +38,14 @@ public class StormConf {
     return null;
 
   }
+
+public ClassLoader getClassLoader() {
+	// TODO Auto-generated method stub
+	return null;
+}
+public void setClassLoader(ClassLoader newLoader) {
+	// TODO Auto-generated method stub
+	
+}
 
 }
